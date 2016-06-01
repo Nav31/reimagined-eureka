@@ -24,7 +24,23 @@ var newQuickSort = (arr) => {
 	return newQuickSort(left).concat(partition, newQuickSort(right));
 }
 
+var quickSort = (arr) =>{
+    var left = [];
+    var right = [];
+    var pivot = arr[0];
+    if(arr.length < 1) {
+        return arr;
+    }
+    
+    for(var i = 1; i < arr.length ; i++){
+        if(arr[i] > pivot) right.push(arr[i])
+        else left.push(arr[i]);
+    }
+    
+    return quickSort(left).concat(pivot, quickSort(right));
+}
 
+quickSort([7,3,9,4,1,5,8])
 
 
 
